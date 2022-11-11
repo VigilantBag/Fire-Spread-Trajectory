@@ -1,4 +1,3 @@
-import ast
 import overpy
 api = overpy.Overpass()
 
