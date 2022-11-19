@@ -8,6 +8,7 @@ from typing import NamedTuple
 
 class gridValues(NamedTuple):
     groundCover: str
+    natural: str
     landUse: str
     elevation: int
     isRoad: bool
@@ -16,8 +17,8 @@ class gridValues(NamedTuple):
     foliageType: str
 
 
-simulation1 = gridValues(groundCover= 'none', landUse= 'wild life',
+simulation1 = gridValues(groundCover= 'none', natural = 'scrub', landUse= 'wild life',
                          elevation= 44000, isRoad= False, isBuilding= False,
-                         isHouse= True, foliageType= 'grass')
+                         isHouse= False, foliageType= 'grass')
 
 print (simulation1)
