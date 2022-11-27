@@ -1,6 +1,6 @@
 import overpy
 import time
-import Namedtuple
+from Namedtuple import gridValues, dictPointer
 
 api = overpy.Overpass(url="https://e789-209-129-115-55.ngrok.io/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
 
@@ -8,30 +8,28 @@ radius = 100 #meters
 lat = 34.167282045937164
 long = -119.03844158095751
 
-ways = []
 
+queryList = ["natural", "landuse", "ele"]
 natural = "null"
 landuse = "null"
 searchtype = "natural"
 
 
-i = 1
 
-while(i <= 2):
-    result = api.query('[out:json];way["natural"](around:900,34.167282045937164,-119.03844158095751); out;')
+while(len(gridValues[dictPointer]) == 0):
+    result = api.query('[out:json];way["natural"](around:{0},{1},{2}); out;'.format(radius, lat, long))
     try:
         way = result.ways[0]
+        gridValues.append({"groundCover": 'null', "natural":'null', "landuse": 'null', "ele": 0, "isRoad": "False", "isBuilding": False, "isHouse": False, "foliageType": 'null'})
         #print(way.tags)
-        try:
-            natural = way.tags["natural"]
-            ways.append(Namedtuple.gridValues("null", way.tags["natural"], "null", "null", "null", "null", "null", "null")) 
-        except(KeyError):
+        for j in range(len(queryList)):
+            
             try:
-                landuse = way.tags["landuse"]
-                ways.append(Namedtuple.gridValues("null", "null", way.tags["landuse"], "null", "null", "null", "null", "null"))
+                natural = way.tags[j]
+                gridValues[dictPointer][j]
             except(KeyError):
-                print(ways[i])
-                i = i+1
+                print()
+
     except(KeyError):
         radius = radius+100
         print("new radius = {}".format(radius))
@@ -39,8 +37,8 @@ while(i <= 2):
     except(IndexError):
         radius = radius+100
         print("INDEX new radius = {}".format(radius))
-for i in range(len(ways)):
-    print(ways[i])
+
+print(gridValues)
     
 print(natural)
 print(landuse)

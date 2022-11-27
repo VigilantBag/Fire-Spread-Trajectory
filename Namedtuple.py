@@ -15,13 +15,14 @@ class gridValues1(dict):
     isBuilding: bool
     isHouse: bool
     foliageType: str
-
+dictPointer = 0
 gridValues = []
 
 
-gridValues.append({"groundCover": 'none', "natural":'scrub', "landUse": 'wild life',
-                         "elevation": 44000, "isRoad": "False", "isBuilding": False,
+gridValues.append({"groundCover": 'none', "natural":'scrub', "landuse": 'wild life',
+                         "ele": 44000, "isRoad": "False", "isBuilding": False,
                          "isHouse": False, "foliageType": 'grass'})
 
 #print (simulation1)
 print(gridValues[0]["groundCover"])
+print(range(len(gridValues[0])))
