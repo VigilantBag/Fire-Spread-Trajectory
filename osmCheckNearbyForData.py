@@ -17,7 +17,7 @@ searchtype = "natural"
 
 
 while(len(gridValues[dictPointer]) == 0):
-    result = api.query('[out:json];way["natural"](around:{0},{1},{2}); out;'.format(radius, lat, long))
+    result = api.query('[out:json];way["natural"](around:{0},{1},{2}); way["landuse"](around: {0},{1},{2}); way["ele"](around: {0},{1},{2});out;'.format(radius, lat, long))
     try:
         way = result.ways[0]
         gridValues.append({"groundCover": 'null', "natural":'null', "landuse": 'null', "ele": 0, "isRoad": "False", "isBuilding": False, "isHouse": False, "foliageType": 'null'})
