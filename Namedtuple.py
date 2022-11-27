@@ -6,7 +6,7 @@
 
 from typing import NamedTuple
 
-class gridValues(NamedTuple):
+class gridValues1(dict):
     groundCover: str
     natural: str
     landUse: str
@@ -16,9 +16,12 @@ class gridValues(NamedTuple):
     isHouse: bool
     foliageType: str
 
+gridValues = []
 
-simulation1 = gridValues(groundCover= 'none', natural = 'scrub', landUse= 'wild life',
-                         elevation= 44000, isRoad= False, isBuilding= False,
-                         isHouse= False, foliageType= 'grass')
 
-print (simulation1)
+gridValues.append({"groundCover": 'none', "natural":'scrub', "landUse": 'wild life',
+                         "elevation": 44000, "isRoad": "False", "isBuilding": False,
+                         "isHouse": False, "foliageType": 'grass'})
+
+#print (simulation1)
+print(gridValues[0]["groundCover"])
