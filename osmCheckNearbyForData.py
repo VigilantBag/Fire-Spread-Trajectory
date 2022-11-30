@@ -15,8 +15,7 @@ landuse = "null"
 searchtype = "natural"
 
 
-
-while(len(gridValues[dictPointer]) == 0):
+while(gridValues[dictPointer]["natural"] == "none") | (gridValues[dictPointer]["landuse"] == "none") | (gridValues[dictPointer]["ele"] == 0):
     result = api.query('[out:json];way["natural"](around:{0},{1},{2}); way["landuse"](around: {0},{1},{2}); way["ele"](around: {0},{1},{2});out;'.format(radius, lat, long))
     try:
         way = result.ways[0]
@@ -28,7 +27,7 @@ while(len(gridValues[dictPointer]) == 0):
                 natural = way.tags[j]
                 gridValues[dictPointer][j]
             except(KeyError):
-                print()
+                print("KE")
 
     except(KeyError):
         radius = radius+100

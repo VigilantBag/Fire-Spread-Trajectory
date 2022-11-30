@@ -19,9 +19,9 @@ dictPointer = 0
 gridValues = []
 
 
-gridValues.append({"groundCover": 'none', "natural":'scrub', "landuse": 'wild life',
-                         "ele": 44000, "isRoad": "False", "isBuilding": False,
-                         "isHouse": False, "foliageType": 'grass'})
+gridValues.append({"groundCover": 'none', "natural":'none', "landuse": 'none',
+                         "ele": 0, "isRoad": "False", "isBuilding": False,
+                         "isHouse": False, "foliageType": 'none'})
 
 #print (simulation1)
 print(gridValues[0]["groundCover"])
