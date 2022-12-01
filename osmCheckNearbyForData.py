@@ -16,36 +16,40 @@ searchtype = "natural"
 indexer = 0
 incradius = False
 
-try:
-    gridValues.append({"groundCover": 'null', "natural":'null', "landuse": 'null', "ele": 0, "isRoad": "False", "isBuilding": False, "isHouse": False, "foliageType": 'null'})
-    while indexer <= len(queryList):
-        result = api.query('[out:json];way[{3}](around:{0},{1},{2}); out;'.format(radius, lat, long, queryList[indexer]))
-        wloop = 0
-        try:
-            way = result.ways[0]
-            #print(way.tags)
-            while wloop < len(queryList):
-                
-                try:
-                    gridValues[dictPointer][queryList[indexer]] = way.tags[queryList[wloop]]
-                    
-                    wloop = wloop+1 #Inc to next data
-                    
-                except(KeyError):
-                    print("KE")
-                    wloop = wloop+1
-            indexer = indexer+1
-            print("Finish filling dict")
-            
+def osm(lat, long):
+    queryList = ["natural", "landuse"]
+    indexer = 0
 
-        
-        except(KeyError):
-            radius = radius+100
-            print("KEY new radius = {}".format(radius))
+    try:
+        gridValues.append({"groundCover": 'null', "natural":'null', "landuse": 'null', "ele": 0, "isRoad": "False", "isBuilding": False, "isHouse": False, "foliageType": 'null'})
+        while indexer <= len(queryList):
+            result = api.query('[out:json];way[{3}](around:{0},{1},{2}); out;'.format(radius, lat, long, queryList[indexer]))
+            wloop = 0
+            try:
+                way = result.ways[0]
+                #print(way.tags)
+                while wloop < len(queryList):
+                    
+                    try:
+                        gridValues[dictPointer][queryList[indexer]] = way.tags[queryList[wloop]]
+                        
+                        wloop = wloop+1 #Inc to next data
+                        
+                    except(KeyError):
+                        print("KE")
+                        wloop = wloop+1
+                indexer = indexer+1
+                print("Finish filling dict")
+                
+
             
-        except(IndexError):
-            radius = radius+100
-            print("INDEX new radius = {}".format(radius))
-        
-except(IndexError):
-    print(gridValues[dictPointer])
+            except(KeyError):
+                radius = radius+100
+                print("KEY new radius = {}".format(radius))
+                
+            except(IndexError):
+                radius = radius+100
+                print("INDEX new radius = {}".format(radius))
+            
+    except(IndexError):
+        print(gridValues[dictPointer])
