@@ -18,8 +18,11 @@ class gridValues1(dict):
 dictPointer = 0
 gridValues = []
 
+gridValues.append({"groundCover": 'null', "natural":'null', "landuse": 'null', "ele": 0, "isRoad": "False", "isBuilding": False, "isHouse": False, "foliageType": 'null'})
+gridValues.append({"groundCover": 'null', "natural":'null', "landuse": 'null', "ele": 0, "isRoad": "False", "isBuilding": False, "isHouse": False, "foliageType": 'null'})
 
 
+print(len(gridValues))
 
 #print (simulation1)
 print(gridValues[0]["groundCover"])
