@@ -1,13 +1,14 @@
 from pathfinding.core.diagonal_movement import DiagonalMovement
 from pathfinding.core.grid import Grid
 from pathfinding.finder.a_star import AStarFinder
+from grid import weightedGrid
 
 matrix = [
   [1, 0.8, 0.45, 0.2],
   [0, 0, 0.40, 0],
   [0.89, 0.24, 1, 1]
 ]
-grid = Grid(matrix=matrix)
+grid = Grid(weightedGrid = weightedGrid)
 
 start = grid.node(0, 0)
 end = grid.node(2, 2)
