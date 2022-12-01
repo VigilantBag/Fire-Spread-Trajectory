@@ -17,9 +17,10 @@ indexer = 0
 incradius = False
 
 def osm(lat, long):
+    api = overpy.Overpass(url="https://all-pants-try-193-37-254-131.loca.lt/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
     queryList = ["natural", "landuse"]
     indexer = 0
-
+    radius = 100 #meters
     try:
         gridValues.append({"groundCover": 'null', "natural":'null', "landuse": 'null', "ele": 0, "isRoad": "False", "isBuilding": False, "isHouse": False, "foliageType": 'null'})
         while indexer <= len(queryList):
