@@ -23,7 +23,7 @@ while coordinateGrid[3][3] == 16:
         inc = inc+100
 
     lat = 0
- 
+    #infinite loop as lat and lon keep being set to 0 everytime while runs again. Need to fix
     while lon < 5:
         coordinateGrid[lat][lon] = (latFt, lonFt-inc)
         coordinatePairs = coordinateGrid[lat][lon]
