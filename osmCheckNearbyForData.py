@@ -2,7 +2,7 @@ import overpy
 import time
 from Namedtuple import gridValues, dictPointer
 
-api = overpy.Overpass(url="https://all-pants-try-193-37-254-131.loca.lt/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
+api = overpy.Overpass(url="https://firespreadtrajectoryosm.loca.lt/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
 
 radius = 100 #meters
 lat = 34.167282045937164
@@ -17,7 +17,7 @@ indexer = 0
 incradius = False
 
 def osm(lat, long):
-    api = overpy.Overpass(url="https://all-pants-try-193-37-254-131.loca.lt/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
+    api = overpy.Overpass(url="https://firespreadtrajectoryosm.loca.lt/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
     queryList = ["natural", "landuse"]
     indexer = 0
     radius = 100 #meters
@@ -54,3 +54,4 @@ def osm(lat, long):
             
     except(IndexError):
         print(gridValues[dictPointer])
+osm(lat, long)
