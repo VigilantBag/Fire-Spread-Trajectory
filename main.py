@@ -11,6 +11,7 @@ coordinateGrid[0][0] = (latFt, lonFt)
 lat = 0
 lon = 0
 inc = 0
+counter = 0
 while coordinateGrid[3][3] == 16:
     while lat < 5:
         coordinateGrid[lat][lon] = (latFt+inc, lonFt)
@@ -35,5 +36,8 @@ while coordinateGrid[3][3] == 16:
         inc = inc+100
         
     lon = 0
+    counter += 1
+    if (counter == 15)
+        break;
 
         
