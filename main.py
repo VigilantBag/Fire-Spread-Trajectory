@@ -13,6 +13,7 @@ coordinateGrid[0][0] = (latFt, lonFt)
 lat = 0
 lon = 0
 inc = 0
+dictPointer = 0
 counter = 0
 while lon <= 3:
     coordinateGrid[0][lon] = (latFt, lonFt-inc)
@@ -20,9 +21,10 @@ while lon <= 3:
     latitude, longitude = coordinatePairs
     latfttoCoord = latitude/3280.34/111.1111111111111
     lonfttoCoord = longitude/3280.34/111.1111111111111
-    osm(latfttoCoord, lonfttoCoord)
+    osm(latfttoCoord, lonfttoCoord, dictPointer)
+    dictPointer = dictPointer + 1
     lon = lon+1
-    inc = inc+10
+    inc = inc+100
 inc = 0
 lon = 0
 while lon <= 3:
@@ -31,7 +33,8 @@ while lon <= 3:
     latitude, longitude = coordinatePairs
     latfttoCoord = latitude/3280.34/111.1111111111111
     lonfttoCoord = longitude/3280.34/111.1111111111111
-    osm(latfttoCoord, lonfttoCoord)
+    osm(latfttoCoord, lonfttoCoord, dictPointer)
+    dictPointer = dictPointer + 1
     lon = lon+1
     inc = inc+100
 lon = 0
@@ -42,7 +45,8 @@ while lon <= 3:
     latitude, longitude = coordinatePairs
     latfttoCoord = latitude/3280.34/111.1111111111111
     lonfttoCoord = longitude/3280.34/111.1111111111111
-    osm(latfttoCoord, lonfttoCoord)
+    osm(latfttoCoord, lonfttoCoord, dictPointer)
+    dictPointer = dictPointer + 1
     lon = lon+1
     inc = inc+100
 lon = 0
@@ -53,7 +57,8 @@ while lon <= 3:
     latitude, longitude = coordinatePairs
     latfttoCoord = latitude/3280.34/111.1111111111111
     lonfttoCoord = longitude/3280.34/111.1111111111111
-    osm(latfttoCoord, lonfttoCoord)
+    osm(latfttoCoord, lonfttoCoord, dictPointer)
+    dictPointer = dictPointer + 1
     lon = lon+1
     inc = inc+100
 lon = 0

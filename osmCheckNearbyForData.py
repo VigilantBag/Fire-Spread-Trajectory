@@ -4,10 +4,9 @@ from Namedtuple import gridValues, dictPointer
 
 api = overpy.Overpass(url="https://firespreadtrajectoryosm.loca.lt/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
 
-radius = 100 #meters
+radius = 0 #meters
 lat = 34.167282045937164
 long = -119.03844158095751
-
 
 queryList = ["natural", "landuse"]
 natural = "null"
@@ -16,16 +15,15 @@ searchtype = "natural"
 indexer = 0
 incradius = False
 
-def osm(lat, long):
+def osm(lat, long, dictPointer):
     api = overpy.Overpass(url="http://bore.pub:35067/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
-    overpy.Overpass()
     queryList = ["natural", "landuse"]
     indexer = 0
     radius = 100 #meters
     try:
         gridValues.append({"groundCover": 'null', "natural":'null', "landuse": 'null', "ele": 0, "isRoad": "False", "isBuilding": False, "isHouse": False, "foliageType": 'null'})
-        while indexer <= len(queryList):
-            result = api.query('[out:json];way[{3}](around:{0},{1},{2}); out;'.format(radius, lat, long, queryList[indexer]))
+        while gridValues[dictPointer]["natural"] == 'null' and radius <= 1000:
+            result = api.query('[out:json];way[{3}](around:{0},{1},{2}); out;'.format(radius, lat, long, "natural"))
             wloop = 0
             try:
                 way = result.ways[0]
@@ -46,13 +44,12 @@ def osm(lat, long):
 
             
             except(KeyError):
-                radius = radius+100
+                radius = radius+10
                 print("KEY new radius = {}".format(radius))
                 
             except(IndexError):
-                radius = radius+100
+                radius = radius+10
                 print("INDEX new radius = {}".format(radius))
             
     except(IndexError):
         print(gridValues[dictPointer])
-osm(lat, long)
