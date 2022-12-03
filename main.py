@@ -25,8 +25,8 @@ while coordinateGrid[3][3] == 16:
         coordinateGrid[lat][lon] = (latFt, lonFt-inc)
         coordinatePairs = coordinateGrid[lat][lon]
         (latitude, longitude) = coordinatePairs
-        latfttoCoord = latitude/3280.34/(10,000/90)
-        lonfttoCoord = longitude/3280.34/(10,000/90)
+        latfttoCoord = (latitude,)/3280.34/(10,000/90)
+        lonfttoCoord = (longitude)/3280.34/(10,000/90)
         osm(latfttoCoord, lonfttoCoord)
         lon = lon+1
         inc = inc+100
