@@ -1,5 +1,7 @@
 from grid import coordinateGrid
 from osmCheckNearbyForData import osm
+from WeightCalculation import calcWeight
+from Namedtuple import gridValues
 startLat = 34.167282045937164
 startLon = -119.03844158095751
 
@@ -24,7 +26,7 @@ while lon <= 3:
 inc = 0
 lon = 0
 while lon <= 3:
-    coordinateGrid[1][lon] = (latFt+100, lonFt-inc)
+    coordinateGrid[1][lon] = (latFt+inc, lonFt-inc)
     coordinatePairs = coordinateGrid[lat][lon]
     latitude, longitude = coordinatePairs
     latfttoCoord = latitude/3280.34/111.1111111111111
@@ -35,7 +37,7 @@ while lon <= 3:
 lon = 0
 inc = 0
 while lon <= 3:
-    coordinateGrid[2][lon] = (latFt+200, lonFt-inc)
+    coordinateGrid[2][lon] = (latFt+inc, lonFt-inc)
     coordinatePairs = coordinateGrid[lat][lon]
     latitude, longitude = coordinatePairs
     latfttoCoord = latitude/3280.34/111.1111111111111
@@ -46,7 +48,7 @@ while lon <= 3:
 lon = 0
 inc = 0
 while lon <= 3:
-    coordinateGrid[3][lon] = (latFt+300, lonFt-inc)
+    coordinateGrid[3][lon] = (latFt+inc, lonFt-inc)
     coordinatePairs = coordinateGrid[lat][lon]
     latitude, longitude = coordinatePairs
     latfttoCoord = latitude/3280.34/111.1111111111111
@@ -57,6 +59,7 @@ while lon <= 3:
 lon = 0
 inc = 0
 lat = 0
+calcWeight()
     #infinite loop as lat and lon keep being set to 0 everytime while runs again. Need to fix
 """while lon < 5:
     coordinateGrid[lat][lon] = (latFt, lonFt-inc)
@@ -72,5 +75,6 @@ lon = 0
 counter += 1
 """
 print(coordinateGrid)
+print(gridValues)
 
         
