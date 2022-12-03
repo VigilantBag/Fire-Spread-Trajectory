@@ -20,7 +20,8 @@ while lon <= 3:
     lonfttoCoord = longitude/3280.34/111.1111111111111
     osm(latfttoCoord, lonfttoCoord)
     lon = lon+1
-    inc = inc+100
+    inc = inc+10
+inc = 0
 lon = 0
 while lon <= 3:
     coordinateGrid[1][lon] = (latFt+100, lonFt-inc)
@@ -32,6 +33,7 @@ while lon <= 3:
     lon = lon+1
     inc = inc+100
 lon = 0
+inc = 0
 while lon <= 3:
     coordinateGrid[2][lon] = (latFt+200, lonFt-inc)
     coordinatePairs = coordinateGrid[lat][lon]
@@ -42,6 +44,7 @@ while lon <= 3:
     lon = lon+1
     inc = inc+100
 lon = 0
+inc = 0
 while lon <= 3:
     coordinateGrid[3][lon] = (latFt+300, lonFt-inc)
     coordinatePairs = coordinateGrid[lat][lon]
@@ -52,7 +55,7 @@ while lon <= 3:
     lon = lon+1
     inc = inc+100
 lon = 0
-
+inc = 0
 lat = 0
     #infinite loop as lat and lon keep being set to 0 everytime while runs again. Need to fix
 """while lon < 5:
