@@ -19,7 +19,7 @@ def osm(lat, long, dictPointer):
     api = overpy.Overpass(url="http://bore.pub:35067/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
     queryList = ["natural", "landuse"]
     indexer = 0
-    radius = 100 #meters
+    radius = 0 #meters
     try:
         gridValues.append({"groundCover": 'null', "natural":'null', "landuse": 'null', "ele": 0, "isRoad": "False", "isBuilding": False, "isHouse": False, "foliageType": 'null'})
         while gridValues[dictPointer]["natural"] == 'null' and radius <= 1000:
