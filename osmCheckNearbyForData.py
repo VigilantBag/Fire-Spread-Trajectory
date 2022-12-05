@@ -16,7 +16,7 @@ indexer = 0
 incradius = False
 
 def osm(lat, long, dictPointer):
-    api = overpy.Overpass(url="http://bore.pub:35067/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
+    api = overpy.Overpass(url="http://bore.pub:40481/api/interpreter/", max_retry_count=20) #Change url as needed, but keep subdirectory /api/interpreter/
     queryList = ["natural", "landuse"]
     indexer = 0
     radius = 0 #meters
