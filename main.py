@@ -24,7 +24,7 @@ while lon <= 3:
     osm(latfttoCoord, lonfttoCoord, dictPointer)
     dictPointer = dictPointer + 1
     lon = lon+1
-    inc = inc+100
+    inc = inc+1000
 inc = 0
 lon = 0
 while lon <= 3:
@@ -36,7 +36,7 @@ while lon <= 3:
     osm(latfttoCoord, lonfttoCoord, dictPointer)
     dictPointer = dictPointer + 1
     lon = lon+1
-    inc = inc+100
+    inc = inc+1000
 lon = 0
 inc = 0
 while lon <= 3:
@@ -48,7 +48,7 @@ while lon <= 3:
     osm(latfttoCoord, lonfttoCoord, dictPointer)
     dictPointer = dictPointer + 1
     lon = lon+1
-    inc = inc+100
+    inc = inc+1000
 lon = 0
 inc = 0
 while lon <= 3:
@@ -60,7 +60,7 @@ while lon <= 3:
     osm(latfttoCoord, lonfttoCoord, dictPointer)
     dictPointer = dictPointer + 1
     lon = lon+1
-    inc = inc+100
+    inc = inc+1000
 lon = 0
 inc = 0
 lat = 0
@@ -74,7 +74,7 @@ calcWeight()
     lonfttoCoord = longitude/3280.34/111.1111111111111
     osm(latfttoCoord, lonfttoCoord)
     lon = lon+1
-    inc = inc+100
+    inc = inc+1000
     
 lon = 0
 counter += 1
