@@ -1,0 +1,5 @@
+sudo apt install python3
+
+pip3 install overpy
+
+git clone -b use_float https://github.com/brean/python-pathfinding.git

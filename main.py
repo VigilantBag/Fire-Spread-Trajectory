@@ -26,7 +26,7 @@ while lon <= 3:
     osm(latfttoCoord, lonfttoCoord, dictPointer)
     dictPointer = dictPointer + 1
     lon = lon+1
-    inc = inc+100
+    inc = inc+500
 inc = 0
 lon = 0
 while lon <= 3:
@@ -38,7 +38,7 @@ while lon <= 3:
     osm(latfttoCoord, lonfttoCoord, dictPointer)
     dictPointer = dictPointer + 1
     lon = lon+1
-    inc = inc+100
+    inc = inc+500
 lon = 0
 inc = 0
 while lon <= 3:
@@ -50,7 +50,7 @@ while lon <= 3:
     osm(latfttoCoord, lonfttoCoord, dictPointer)
     dictPointer = dictPointer + 1
     lon = lon+1
-    inc = inc+100
+    inc = inc+500
 lon = 0
 inc = 0
 while lon <= 3:
@@ -62,7 +62,7 @@ while lon <= 3:
     osm(latfttoCoord, lonfttoCoord, dictPointer)
     dictPointer = dictPointer + 1
     lon = lon+1
-    inc = inc+100
+    inc = inc+500
 lon = 0
 inc = 0
 lat = 0

@@ -8,7 +8,7 @@ def findPath():
   grid = Grid(matrix=matrix)
 
   start = grid.node(0, 0)
-  end = grid.node(3, 2)
+  end = grid.node(3, 3)
 
   finder = AStarFinder(diagonal_movement=DiagonalMovement.always)
   path, runs = finder.find_path(start, end, grid)
