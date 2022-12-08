@@ -11,3 +11,5 @@ git clone -b use_float https://github.com/brean/python-pathfinding.git
 python3 main.py
 ## Change top left starting point
 Edit the start latitude and start longitude in main.py
+## Current URL for debugging
+http://bore.pub:40877/api/interpreter/
