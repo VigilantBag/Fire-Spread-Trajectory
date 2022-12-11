@@ -12,4 +12,4 @@ python3 main.py
 ## Change top left starting point
 Edit the start latitude and start longitude in main.py
 ## Current URL for debugging
-http://bore.pub:40781/api/interpreter/
+http://bore.pub:36043/api/interpreter/
